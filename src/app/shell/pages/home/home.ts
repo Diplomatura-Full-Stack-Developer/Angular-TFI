@@ -1,16 +1,16 @@
 import { Component, inject } from '@angular/core';
-import { ProductCard } from '../ui/product-card/product-card';
+import { ProductCard } from '../../../features/products/pages/ui/product-card/product-card';
 import { OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../../features/products/services/product.service';
 import { computed } from '@angular/core';
 
 @Component({
-  selector: 'app-products-list',
+  selector: 'app-home',
   imports: [RouterLink, ProductCard],
-  templateUrl: './products-list.html',
+  templateUrl: './home.html',
 })
-export class ProductsList implements OnInit {
+export class Home implements OnInit {
 
   private productService = inject(ProductService);
 
@@ -25,4 +25,4 @@ export class ProductsList implements OnInit {
   }
 }
 
-export default ProductsList;
+export default Home;

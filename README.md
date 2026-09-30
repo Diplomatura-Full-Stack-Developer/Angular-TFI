@@ -2,68 +2,44 @@
 
 ## Curso de desarrollo con Angular - Profesor: Gabriel Alberini
 
-### Módulo 1: Angular
+## Trabajo Final Integrador
 
-### Unidad 4: Angular Avanzado. Routing.
-
-### Tarea 4: Aplicación modular con rutas y almacenamiento en navegador.
+### Desarrollar una SPA (Single Page Application).
 
 ### Objetivos:
 
-Aplicar los conceptos de **módulos**, _**routing**_, **rutas dinámicas**, **lazy loading** y el uso de **localStorage/sessionStorage** en Angular.
+Desarrollar una SPA (Single Page Application) aplicando los conceptos trabajados durante el curso:
+
+- **Módulos**
+- **Routing**
+- **Rutas dinámicas**
+- **Lazy loading**
+- **localStorage/sessionStorage**
+- **Estilos**
+- **Organización del proyecto**
+- **Deploy en Firebase**
+
+### Proyecto:
+
+El proyecto se desarrolla sobre una idea propia de una casa de venta de artículos del hogar con más de 80 años de historia
+que nace a partir de un emprendimiento familiar.
+Esta empresa, con el paso del tiempo fué creciendo y se establecieron sucursales en diferentes provincias de la Argentina.
+El logo de la empresa es un diseño propio creado con la ayuda de chatGPT.
+Son propios los diseños de las sucursales con la marquesina y el logo de la empresa, también con la ayuda de chatGPT para obtener las imagenes.
+Las sucursales, que están en diferentes provincias de país, se ubican dos de ellas en esquinas centricas comerciales,
+una a mitad de cuadra, también en un centro comercial, y otra en un shopping center.
+En la aplicación también hay una imagen de fondo en la página donde se cuenta la historia de la empresa.
+Esta imagen corresponde a la primera sucursal que se inauguró en la ciudad de Buenos Aires. Con esta idea y con la ayuda de chatGPT se creó esta imagen de fondo con estilo vintage.
 
 ### Consideraciones:
 
+- Se desarrolla un proyecto similar al entregado en el curso de React, con el objetivo de comparar con Angular la implementación de las distintas herramientas que caracterízan a cada uno.
+- Otro objetivo, es dejar con esta aplicación un frontend adecuado para desarrollar el backend correspondiente con el curso de NodeJS.
 - Se simula la utilización de datos dinámicos mediante señales, haciendo en primer lugar una carga de datos estáticos.
 - Se mantiene la persistencia de los datos en el navegador mediante el uso de **localStorage**.
 - Se configura un **lazy loading** de los módulos de la aplicación mediante el uso de **loadComponent**.
 - Se almacena en el localStorage la última URL visitada por el usuario para redireccionar a ella luego de reinciar la aplicación.
 - Se configura una **ruta dinámica** para la visualización de los detalles de un producto.
-
-### Capturas de pantallas:
-
-<table>
-  <thead>
-    <tr>
-      <th>Inicio</th>
-      <th>Menú</th>
-      <th>Inicio de sesión</th>
-    </tr>
-  </thead>
-  <tbody>
-    <td>
-      <img src="src/assets/home.png" alt="Home">
-    </td>
-    <td>
-      <img src="src/assets/menu.png" alt="Menu">
-    </td>
-    <td>
-      <img src="src/assets/session-form.png" alt="Session Form">
-    </td>
-  </tr>
-  </tbody>
-</table>
-<table>
-  <thead>
-    <tr>
-      <th>Registro</th>
-      <th>Inicio de sesión con datos</th>
-      <th>Detalles del producto</th>
-    </tr>
-  </thead>
-  <tbody>
-    <td>
-      <img src="src/assets/register-form.png" alt="Register Form">
-    </td>
-    <td>
-      <img src="src/assets/session-form-with-data.png" alt="Session Form with Data">
-    </td>
-    <td>
-      <img src="src/assets/product-details.png" alt="Product Details">
-    </td>
-  </tr>
-  </tbody>
-</table>
 
 ### Pasos para el despliegue en Firebase:
 
@@ -129,16 +105,33 @@ firebase deploy
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/Diplomatura-Full-Stack-Developer/Angular-M1-T4
+git clone https://github.com/Diplomatura-Full-Stack-Developer/Angular-TFI
 ```
 
-1. Instalar las dependencias:
+2. Instalar las dependencias:
 
 ```bash
 npm install
 ```
 
-1. Ejecutar la aplicación:
+3. Configurar las variables de entorno:
+
+```typescript
+export const environment = {
+  production: false,
+  firebaseConfig: {
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: '',
+    appId: '',
+    measurementId: '',
+  },
+};
+```
+
+4. Ejecutar la aplicación:
 
 ```bash
 ng serve
