@@ -15,6 +15,33 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class Navbar {
 
+
+  menuItems = computed<{ label: string; routerLink?: string; action?: () => void }[]>(() => [
+    {
+      label: 'Inicio',
+      routerLink: '/'
+    },
+    {
+      label: 'Nosotros',
+      routerLink: '/about'
+    },
+    {
+      label: 'Contacto',
+      routerLink: '/contact'
+    },
+    ...(this.session() ? [
+      {
+        label: 'Cerrar sesión',
+        action: () => this.logout()
+      }
+    ] : [
+      {
+        label: 'Iniciar sesión',
+        routerLink: '/login'
+      }
+    ])
+  ]);
+
   private userService = inject(UserService);
 
   session = computed(() => this.userService.session());
