@@ -100,5 +100,141 @@
       "Control remoto",
       "Eficiencia energética A"
     ]
+  },
+  {
+    "deleted": false,
+    "category": "Licuadora",
+    "brand": "Philips",
+    "model": "HR2224/00",
+    "price": 89999,
+    "offer": true,
+    "discount": 10,
+    "stock": 14,
+    "imageUrl": "/images/products/no-image.png",
+    "features": [
+      "Potencia 800 W",
+      "Jarra de 2 litros",
+      "5 velocidades",
+      "Cuchillas de acero inoxidable"
+    ]
+  },
+  {
+    "deleted": false,
+    "category": "Batidora",
+    "brand": "Peabody",
+    "model": "PE-BM101",
+    "price": 74999,
+    "offer": false,
+    "discount": 0,
+    "stock": 10,
+    "imageUrl": "/images/products/no-image.png",
+    "features": [
+      "Potencia 300 W",
+      "5 velocidades",
+      "Batidores y ganchos amasadores",
+      "Boton expulsor de accesorios"
+    ]
+  },
+  {
+    "deleted": false,
+    "category": "Ventilador de pie",
+    "brand": "Liliana",
+    "model": "VPC20",
+    "price": 109999,
+    "offer": true,
+    "discount": 15,
+    "stock": 16,
+    "imageUrl": "/images/products/no-image.png",
+    "features": [
+      "Diametro 20 pulgadas",
+      "3 velocidades",
+      "Altura regulable",
+      "Cabezal oscilante"
+    ]
+  },
+  {
+    "deleted": false,
+    "category": "Cafetera electrica",
+    "brand": "Oster",
+    "model": "BVSTDC05",
+    "price": 84999,
+    "offer": false,
+    "discount": 0,
+    "stock": 11,
+    "imageUrl": "/images/products/no-image.png",
+    "features": [
+      "Capacidad para 12 tazas",
+      "Filtro permanente lavable",
+      "Sistema antigoteo",
+      "Placa calefactora"
+    ]
+  },
+  {
+    "deleted": false,
+    "category": "Horno electrico",
+    "brand": "Atma",
+    "model": "HG4010E",
+    "price": 179999,
+    "offer": true,
+    "discount": 10,
+    "stock": 6,
+    "imageUrl": "/images/products/no-image.png",
+    "features": [
+      "Capacidad 40 litros",
+      "Potencia 1600 W",
+      "Termostato regulable",
+      "Timer de 60 minutos"
+    ]
+  },
+  {
+    "deleted": false,
+    "category": "Secador de cabello",
+    "brand": "Philips",
+    "model": "BHD274/00",
+    "price": 69999,
+    "offer": false,
+    "discount": 0,
+    "stock": 18,
+    "imageUrl": "/images/products/no-image.png",
+    "features": [
+      "Potencia 2200 W",
+      "3 niveles de temperatura",
+      "Funcion de aire frio",
+      "Boquilla concentradora"
+    ]
+  },
+  {
+    "deleted": false,
+    "category": "Estufa electrica",
+    "brand": "Liliana",
+    "model": "CFO900",
+    "price": 94999,
+    "offer": true,
+    "discount": 10,
+    "stock": 9,
+    "imageUrl": "/images/products/no-image.png",
+    "features": [
+      "2 niveles de potencia",
+      "Calor por conveccion",
+      "Termostato regulable",
+      "Proteccion contra sobrecalentamiento"
+    ]
+  },
+  {
+    "deleted": false,
+    "category": "Calefactor",
+    "brand": "Peabody",
+    "model": "PE-VT20",
+    "price": 119999,
+    "offer": false,
+    "discount": 0,
+    "stock": 7,
+    "imageUrl": "/images/products/no-image.png",
+    "features": [
+      "Potencia 2000 W",
+      "Modo ventilacion y calor",
+      "Termostato regulable",
+      "Sistema de seguridad antivuelco"
+    ]
   }
 ]

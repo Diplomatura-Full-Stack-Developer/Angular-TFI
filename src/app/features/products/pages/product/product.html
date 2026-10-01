@@ -43,7 +43,11 @@
         {{ product.createdAt | date: 'dd/MM/yyyy' }}
       </p>
     </mat-card-content>
-    <mat-card-actions> </mat-card-actions>
+    <mat-card-actions>
+      <button matButton class="bg-accent-600 text-white" (click)="addProductToCart(product.id)">
+        Agregar al carrito
+      </button>
+    </mat-card-actions>
   </mat-card>
 } @else {
   <div class="text-accent-600 text-center text-2xl font-bold">Producto no encontrado</div>

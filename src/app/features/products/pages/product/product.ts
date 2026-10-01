@@ -9,16 +9,18 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs/operators';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { DiscountPipe } from '../../../../shared/pipes/discount.pipe';
-
+import { ICartProduct } from '../../interfaces/product.interface';
+import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-product',
-  imports: [MatButtonModule, MatCardModule, CurrencyPipe, DiscountPipe, DatePipe],
+  imports: [MatButtonModule, MatCardModule, CurrencyPipe, DiscountPipe, DatePipe, MatIconModule],
   templateUrl: './product.html',
 })
 export class Product {
   private productService = inject(ProductService);
   private route = inject(ActivatedRoute);
-
+  private router = inject(Router);
   private productId = toSignal(
     this.route.paramMap.pipe(map((params) => params.get('id'))),
   );
@@ -37,5 +39,10 @@ export class Product {
   }
 
   error = this.productService.error;
+
+  addProductToCart(id: string): void {
+    this.productService.addProductToCart(this.product() as ICartProduct);
+    this.router.navigate(['/products-cart']);
+  }
 }
 export default Product;

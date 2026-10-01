@@ -1,5 +1,5 @@
 import { inject, Service, signal } from '@angular/core';
-import { IProduct } from '../interfaces/product.interface';
+import { ICartProduct, IProduct } from '../interfaces/product.interface';
 import { HttpClient } from '@angular/common/http';
 import { catchError, of } from 'rxjs';
 @Service()
@@ -11,9 +11,11 @@ export class ProductService {
 
   private persist(): void {
     localStorage.setItem('products', JSON.stringify(this.products()));
+    localStorage.setItem('cart', JSON.stringify(this.cart()));
   }
 
   products = signal<IProduct[]>([]);
+  cart = signal<ICartProduct[]>([]);
 
   private readonly _error = signal<string | null>(null);
   readonly error = this._error.asReadonly();
@@ -62,6 +64,30 @@ export class ProductService {
       this.persist();
     } catch (error) {
       this._error.set(`Error deleting product: ${error as string}`);
+    }
+  }
+
+  addProductToCart(product: ICartProduct): void {
+
+    try {
+      const existing = this.cart().find((p) => p.id === product.id);
+      if (existing) {
+        this.cart.update((list) => list.map((p) => (p.id === product.id ? { ...p, quantity: (p as ICartProduct).quantity + 1 } : p)));
+      } else {
+        this.cart.update((list) => [...list, { ...product, quantity: 1 }]);
+      }
+      this.persist();
+    } catch (error) {
+      this._error.set(`Error adding product to cart: ${error as string}`);
+    }
+  }
+
+  removeProductFromCart(id: string): void {
+    try {
+      this.cart.update((list) => list.filter((p) => p.id !== id));
+      this.persist();
+    } catch (error) {
+      this._error.set(`Error removing product from cart: ${error as string}`);
     }
   }
 
