@@ -1,6 +1,6 @@
 @for (product of cart(); track product.id) {
-  <div class="flex items-center justify-between">
-    <img [src]="product.imageUrl" [alt]="product.category" />
+  <div class="flex items-center justify-between m-4 border-b border-gray-400! pb-4">
+    <img [src]="product.imageUrl" [alt]="product.category" class="w-24 h-24 object-contain" />
     <h2>{{ product.category }}</h2>
     <p>{{ product.brand }} {{ product.model }}</p>
     <p>{{ product.price | currency: 'ARS' : 'symbol-narrow' : '1.2-2' }}</p>
@@ -9,7 +9,7 @@
     <button
       matIconButton
       (click)="removeProductFromCart(product.id)"
-      class="text-accent-600! hover:text-accent-700! cursor-pointer text-2xl"
+      class="text-accent-600! hover:text-accent-700! cursor-pointer"
     >
       <mat-icon>delete</mat-icon>
     </button>
