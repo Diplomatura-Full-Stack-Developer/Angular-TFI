@@ -1,8 +1,6 @@
-<div class="font-roboto h-screen flex flex-col">
-  <app-header />
-  <main
-    class="bg-primary-50 shadow-lg rounded-sm md:rounded-md md:my-4 mx-0 md:mx-48 flex-1 pb-20 md:pb-0 overflow-y-auto scrollbar-hide"
-  >
+<div class="font-roboto flex flex-col min-h-screen">
+  <app-header class="sticky top-0 z-50" />
+  <main class="bg-primary-50 shadow-lg mx-0 md:mx-48 flex-1">
     <router-outlet />
   </main>
   <app-footer />

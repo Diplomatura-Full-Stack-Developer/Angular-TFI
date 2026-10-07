@@ -5,10 +5,11 @@ import { computed } from '@angular/core';
 import { ProductService } from '../../features/products/services/product.service';
 import { Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
+import { ICartProduct } from '../../features/products/interfaces/product.interface';
 @Component({
   selector: 'app-header',
   imports: [Navbar, MatIcon],
-  templateUrl: './header.html',
+  templateUrl: './header.html'
 })
 export class Header {
 
@@ -16,7 +17,7 @@ export class Header {
   private userService = inject(UserService);
   private productService = inject(ProductService);
 
-  cart = computed(() => this.productService.cart());
+  totalCartQuantity = computed(() => this.productService.totalQuantityInCart());
 
   session = computed(() => this.userService.session());
 
@@ -25,4 +26,6 @@ export class Header {
   openCart = () => {
     this.router.navigate(['/products-cart']);
   };
+
+
 }

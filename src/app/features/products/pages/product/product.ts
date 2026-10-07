@@ -12,15 +12,25 @@ import { DiscountPipe } from '../../../../shared/pipes/discount.pipe';
 import { ICartProduct } from '../../interfaces/product.interface';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { UserService } from '../../../users/services/user.service';
+
 @Component({
   selector: 'app-product',
-  imports: [MatButtonModule, MatCardModule, CurrencyPipe, DiscountPipe, DatePipe, MatIconModule],
+  imports: [MatButtonModule, MatCardModule, CurrencyPipe, DiscountPipe, MatIconModule],
   templateUrl: './product.html',
 })
 export class Product {
   private productService = inject(ProductService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);
+
+  error = this.productService.error;
+  userService = inject(UserService);
+
+  session = computed(() => this.userService.session());
+
+  isLogged = computed(() => this.session() !== undefined);
+
   private productId = toSignal(
     this.route.paramMap.pipe(map((params) => params.get('id'))),
   );
@@ -38,7 +48,17 @@ export class Product {
     this.productService.seedProducts();
   }
 
-  error = this.productService.error;
+  availableStock = computed(() => {
+    const current = this.product();
+    if (!current) {
+      return 0;
+    }
+    const inCart = this.productService.cart().find((item) => item.id === current.id);
+    return current.stock - (inCart?.quantity ?? 0);
+  });
+
+  canAddToCart = computed(() => this.availableStock() > 0);
+
 
   addProductToCart(id: string): void {
     this.productService.addProductToCart(this.product() as ICartProduct);

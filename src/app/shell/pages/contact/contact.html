@@ -26,7 +26,7 @@
       <div class="flex flex-col">
         @for (network of socialNetworks; track network.name) {
           <p class="text-sm text-black/80 text-shadow-lg">
-            <span class="font-bold">{{ network.name }}:</span>
+            <mat-icon class="text-black/80 w-6 h-6" [svgIcon]="network.icon"></mat-icon>
             {{ network.description }}
           </p>
         }

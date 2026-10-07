@@ -15,6 +15,7 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class Navbar {
 
+  session = computed(() => this.userService.session());
 
   menuItems = computed<{ label: string; routerLink?: string; action?: () => void }[]>(() => [
     {
@@ -44,7 +45,6 @@ export class Navbar {
 
   private userService = inject(UserService);
 
-  session = computed(() => this.userService.session());
 
   logout = () => {
     this.userService.logoutUser();

@@ -19,8 +19,5 @@ export class ProductCard {
 
   error = this.productService.error;
 
-  deleteProductById(id: string): void {
-    this.productService.deleteProduct(id);
-  }
 
 }

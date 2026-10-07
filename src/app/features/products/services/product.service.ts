@@ -67,28 +67,54 @@ export class ProductService {
     }
   }
 
-  addProductToCart(product: ICartProduct): void {
-
-    try {
-      const existing = this.cart().find((p) => p.id === product.id);
-      if (existing) {
-        this.cart.update((list) => list.map((p) => (p.id === product.id ? { ...p, quantity: (p as ICartProduct).quantity + 1 } : p)));
-      } else {
-        this.cart.update((list) => [...list, { ...product, quantity: 1 }]);
-      }
-      this.persist();
-    } catch (error) {
-      this._error.set(`Error adding product to cart: ${error as string}`);
+  addProductToCart(product: IProduct): void {
+    const catalog = this.products().find((item) => item.id === product.id);
+    if (!catalog || catalog.stock <= 0) {
+      return;
     }
+
+    const inCart = this.cart().find((item) => item.id === product.id);
+
+    if (inCart) {
+      if (inCart.stock <= 0) {
+        return;
+      }
+      this.cart.update((list) =>
+        list.map((item) =>
+          item.id === product.id
+            ? { ...item, stock: item.stock - 1, quantity: item.quantity + 1 }
+            : item,
+        ),
+      );
+    } else {
+      this.cart.update((list) => [
+        ...list,
+        { ...catalog, stock: catalog.stock - 1, quantity: 1 },
+      ]);
+    }
+    this.persist();
   }
 
+
   removeProductFromCart(id: string): void {
-    try {
-      this.cart.update((list) => list.filter((p) => p.id !== id));
-      this.persist();
-    } catch (error) {
-      this._error.set(`Error removing product from cart: ${error as string}`);
-    }
+    this.cart.update((list) =>
+      list
+        .map((item) =>
+          item.id === id
+            ? { ...item, stock: item.stock + 1, quantity: item.quantity - 1 }
+            : item,
+        )
+        .filter((item) => item.quantity > 0),
+    );
+    this.persist();
+  }
+  searchProducts(search: string) {
+    return this.products().filter((p) => p.category.toLowerCase().includes(search.toLowerCase()));
+  }
+
+
+  totalQuantityInCart(): number {
+    return this.cart().reduce((acc, product) => acc + (product as ICartProduct).quantity, 0);
   }
 
 }

@@ -18,9 +18,10 @@
       mat-card-xl-image
       [src]="product.imageUrl"
       alt="Photo of a Shiba Inu"
-      class="w-full h-full object-contain"
+      class="w-full h-36 object-contain"
     />
     <mat-card-content class="text-sm text-gray-700 text-shadow-sm my-2">
+      <p><span class="font-bold">Modelo: </span> {{ product.model }}</p>
       <p><span class="font-bold">Precio: </span> {{ product.price | currency: '$ ' }}</p>
 
       @if (product.discount > 0) {
@@ -29,24 +30,30 @@
           {{ product.price | discount: product.discount! | currency: '$ ' }}
         </p>
       }
-      <p>
-        <span class="font-bold">Stock: </span>
-        {{ product.stock && product.stock > 0 ? 'Disponible' : 'Agotado' }}
-      </p>
-      <p>
-        <span class="font-bold">Oferta: </span>
-        {{ product.offer ? '12 Cuotas sin interes' : 'Este producto no tiene oferta' }}
-      </p>
-      <p><span class="font-bold">Características: </span> {{ product.features?.join(', ') }}</p>
-      <p>
-        <span class="font-bold">Fecha de alta: </span>
-        {{ product.createdAt | date: 'dd/MM/yyyy' }}
-      </p>
+
+      @if (availableStock() > 0) {
+        <p>
+          <span class="font-bold">Stock: </span>
+          {{ availableStock() }}
+        </p>
+      }
     </mat-card-content>
     <mat-card-actions>
-      <button matButton class="bg-accent-600 text-white" (click)="addProductToCart(product.id)">
-        Agregar al carrito
-      </button>
+      <div class="flex flex-col items-center justify-center">
+        <button
+          matButton
+          class="bg-accent-600 text-white"
+          [disabled]="!canAddToCart() || !isLogged()"
+          (click)="addProductToCart(product.id)"
+        >
+          {{ canAddToCart() ? 'Agregar al carrito' : 'No hay stock disponible' }}
+        </button>
+        @if (!isLogged()) {
+          <p class="text-accent-600 text-center text-sm font-bold">
+            Debes iniciar sesión para agregar productos al carrito
+          </p>
+        }
+      </div>
     </mat-card-actions>
   </mat-card>
 } @else {

@@ -110,7 +110,7 @@
     "offer": true,
     "discount": 10,
     "stock": 14,
-    "imageUrl": "/images/products/no-image.png",
+    "imageUrl": "/images/products/licuadora.webp",
     "features": [
       "Potencia 800 W",
       "Jarra de 2 litros",
@@ -127,7 +127,7 @@
     "offer": false,
     "discount": 0,
     "stock": 10,
-    "imageUrl": "/images/products/no-image.png",
+    "imageUrl": "/images/products/batidora.webp",
     "features": [
       "Potencia 300 W",
       "5 velocidades",
@@ -144,7 +144,7 @@
     "offer": true,
     "discount": 15,
     "stock": 16,
-    "imageUrl": "/images/products/no-image.png",
+    "imageUrl": "/images/products/ventilador_de_pie.webp",
     "features": [
       "Diametro 20 pulgadas",
       "3 velocidades",
@@ -161,7 +161,7 @@
     "offer": false,
     "discount": 0,
     "stock": 11,
-    "imageUrl": "/images/products/no-image.png",
+    "imageUrl": "/images/products/cafetera_electrica.webp",
     "features": [
       "Capacidad para 12 tazas",
       "Filtro permanente lavable",
@@ -178,7 +178,7 @@
     "offer": true,
     "discount": 10,
     "stock": 6,
-    "imageUrl": "/images/products/no-image.png",
+    "imageUrl": "/images/products/horno_electrico.webp",
     "features": [
       "Capacidad 40 litros",
       "Potencia 1600 W",
@@ -195,7 +195,7 @@
     "offer": false,
     "discount": 0,
     "stock": 18,
-    "imageUrl": "/images/products/no-image.png",
+    "imageUrl": "/images/products/secador_de_pelo.webp",
     "features": [
       "Potencia 2200 W",
       "3 niveles de temperatura",
@@ -212,7 +212,7 @@
     "offer": true,
     "discount": 10,
     "stock": 9,
-    "imageUrl": "/images/products/no-image.png",
+    "imageUrl": "/images/products/estufa_electrica.webp",
     "features": [
       "2 niveles de potencia",
       "Calor por conveccion",
@@ -229,7 +229,7 @@
     "offer": false,
     "discount": 0,
     "stock": 7,
-    "imageUrl": "/images/products/no-image.png",
+    "imageUrl": "/images/products/calefactor.webp",
     "features": [
       "Potencia 2000 W",
       "Modo ventilacion y calor",

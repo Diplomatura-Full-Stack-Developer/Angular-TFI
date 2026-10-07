@@ -40,6 +40,8 @@ Esta imagen corresponde a la primera sucursal que se inauguró en la ciudad de B
 - Se configura un **lazy loading** de los módulos de la aplicación mediante el uso de **loadComponent**.
 - Se almacena en el localStorage la última URL visitada por el usuario para redireccionar a ella luego de reinciar la aplicación.
 - Se configura una **ruta dinámica** para la visualización de los detalles de un producto.
+- Se implementa la funcionalidad de agregar productos al carrito y eliminarlos, también se implementa la funcionalidad de visualizar el total de productos en el carrito.
+- No se implementa la funcionalidad de realizar una compra.
 
 ### Pasos para el despliegue en Firebase:
 

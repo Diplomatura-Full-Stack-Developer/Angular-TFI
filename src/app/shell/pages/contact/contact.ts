@@ -1,24 +1,27 @@
 import { Component, signal } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [MatIcon],
   templateUrl: './contact.html',
 })
 export default class Contact {
 
-  socialNetworks: { name: string, description: string }[] = [
+  socialNetworks: { name: string, description: string, icon: string }[] = [
     {
       name: 'Whatsapp',
       description: '+54 9 11-3333-3333',
+      icon: 'brand-whatsapp',
     },
     {
       name: 'Facebook',
       description: 'https://www.facebook.com/plugyhogar',
+      icon: 'brand-facebook',
     },
     {
       name: 'Instagram',
       description: 'https://www.instagram.com/plugyhogar',
+      icon: 'brand-instagram',
     },
   ];
 
