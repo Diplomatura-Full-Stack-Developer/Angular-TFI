@@ -10,7 +10,13 @@
           <ul class="text-body font-medium">
             @for (item of menuItems(); track item.label) {
               <li class="mb-4">
-                <a [routerLink]="item.routerLink" class="hover:underline">{{ item.label }}</a>
+                @if (item.routerLink) {
+                  <a [routerLink]="item.routerLink" class="hover:underline">{{ item.label }}</a>
+                } @else {
+                  <button type="button" class="hover:underline" (click)="item.action?.()">
+                    {{ item.label }}
+                  </button>
+                }
               </li>
             }
           </ul>
