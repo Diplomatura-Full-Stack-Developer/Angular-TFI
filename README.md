@@ -40,9 +40,11 @@ Esta imagen corresponde a la primera sucursal que se inauguró en la ciudad de B
 - Se configura un **lazy loading** de los módulos de la aplicación mediante el uso de **loadComponent**.
 - Se almacena en el localStorage la última URL visitada por el usuario para redireccionar a ella luego de reinciar la aplicación.
 - Se configura una **ruta dinámica** para la visualización de los detalles de un producto.
-- Se implementa la funcionalidad de agregar productos al carrito y eliminarlos, también se implementa la funcionalidad de visualizar el total de productos en el carrito.
+- Se implementa la funcionalidad de agregar productos al carrito y eliminarlos, también se implementa la funcionalidad de visualizar los productos en el carrito.
 - No se implementa la funcionalidad de realizar una compra.
-- El footer se muestra completo con fines visuales, pero no se implementan las funcionalidades de las redes sociales.
+- El **footer** se muestra completo con fines visuales, pero no se implementan las funcionalidades de las redes sociales.
+- Por medio del uso de señales, se generan condiciones para enviar productos al carrito y visualizarlos.
+- Se implementa el manejo de forma dinámica de cantidades compradas y stock disponible.
 
 ### Pasos para el despliegue en Firebase:
 
@@ -52,13 +54,13 @@ Esta imagen corresponde a la primera sucursal que se inauguró en la ciudad de B
 npm install firebase
 ```
 
-1. Instalar dependencias de Firebase para Angular:
+2. Instalar dependencias de Firebase para Angular:
 
 ```bash
 ng add @angular/fire
 ```
 
-1. Configurar variables de entorno:
+3. Configurar variables de entorno:
 
 ```typescript
 export const environment = {
@@ -75,33 +77,29 @@ export const environment = {
 };
 ```
 
-1. Iniciar sesión en Firebase:
+4. Iniciar sesión en Firebase:
 
 ```bash
 firebase login
 ```
 
-1. Inicializar el proyecto en Firebase:
+5. Inicializar el proyecto en Firebase:
 
 ```bash
 firebase init
 ```
 
-1. Crear el build de producción:
+6. Crear el build de producción:
 
 ```bash
 ng build
 ```
 
-1. Hacer el deploy de la aplicación:
+7. Hacer el deploy de la aplicación:
 
 ```bash
 firebase deploy
 ```
-
-1. Verificar el despliegue en Firebase:
-
-[https://angular-m1-t4.web.app](https://angular-m1-t4.web.app)
 
 ### Pasos para la ejecución local:
 

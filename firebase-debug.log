@@ -1,0 +1,155 @@
+[debug] [2026-10-08T16:40:11.016Z] ----------------------------------------------------------------------
+[debug] [2026-10-08T16:40:11.025Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ruben\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2026-10-08T16:40:11.026Z] CLI Version:   15.30.2
+[debug] [2026-10-08T16:40:11.026Z] Platform:      win32
+[debug] [2026-10-08T16:40:11.026Z] Node Version:  v24.20.0
+[debug] [2026-10-08T16:40:11.026Z] Detected Agent: unknown
+[debug] [2026-10-08T16:40:11.026Z] Time:          Thu Oct 08 2026 13:40:11 GMT-0300 (hora estándar de Argentina)
+[debug] [2026-10-08T16:40:11.026Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\DIPLOMATURA_FSD\Angular-TFI
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-10-08T16:40:33.267Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-08T16:40:33.267Z] > authorizing via signed-in user (ruben.seco.rs@gmail.com)
+[debug] [2026-10-08T16:40:33.318Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:40:33.318Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:40:33.322Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 [none]
+[debug] [2026-10-08T16:40:33.766Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 200
+[debug] [2026-10-08T16:40:33.766Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 {"projectId":"angular-m1-t4","projectNumber":"444842815168","displayName":"Angular-m1-t4","name":"projects/angular-m1-t4","resources":{"hostingSite":"angular-m1-t4"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_2564f7a9-f43d-49a0-abfa-95d3fb9045da"}
+[info] i  Using project angular-m1-t4 (Angular-m1-t4) . 
+[info] 
+=== Hosting Setup
+[debug] [2026-10-08T16:40:50.403Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:40:50.403Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:40:50.404Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 [none]
+[debug] [2026-10-08T16:40:51.060Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 200
+[debug] [2026-10-08T16:40:51.060Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 {"projectId":"angular-m1-t4","projectNumber":"444842815168","displayName":"Angular-m1-t4","name":"projects/angular-m1-t4","resources":{"hostingSite":"angular-m1-t4"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_2564f7a9-f43d-49a0-abfa-95d3fb9045da"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2026-10-08T16:42:28.677Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\ruben\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:514:28)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1343:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:289:20)
+    at ReadStream.emit (node:events:526:24)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+    at ReadStream.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:567:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-10-08T16:42:32.829Z] ----------------------------------------------------------------------
+[debug] [2026-10-08T16:42:32.834Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ruben\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2026-10-08T16:42:32.834Z] CLI Version:   15.30.2
+[debug] [2026-10-08T16:42:32.834Z] Platform:      win32
+[debug] [2026-10-08T16:42:32.834Z] Node Version:  v24.20.0
+[debug] [2026-10-08T16:42:32.834Z] Detected Agent: unknown
+[debug] [2026-10-08T16:42:32.835Z] Time:          Thu Oct 08 2026 13:42:32 GMT-0300 (hora estándar de Argentina)
+[debug] [2026-10-08T16:42:32.835Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\DIPLOMATURA_FSD\Angular-TFI
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2026-10-08T16:42:43.757Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-08T16:42:43.757Z] > authorizing via signed-in user (ruben.seco.rs@gmail.com)
+[debug] [2026-10-08T16:42:43.779Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:42:43.780Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:42:43.781Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 [none]
+[debug] [2026-10-08T16:42:44.209Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 200
+[debug] [2026-10-08T16:42:44.210Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 {"projectId":"angular-m1-t4","projectNumber":"444842815168","displayName":"Angular-m1-t4","name":"projects/angular-m1-t4","resources":{"hostingSite":"angular-m1-t4"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_2564f7a9-f43d-49a0-abfa-95d3fb9045da"}
+[info] i  Using project angular-m1-t4 (Angular-m1-t4) . 
+[info] 
+=== Hosting Setup
+[debug] [2026-10-08T16:42:59.312Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:42:59.312Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:42:59.312Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 [none]
+[debug] [2026-10-08T16:42:59.900Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 200
+[debug] [2026-10-08T16:42:59.900Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/angular-m1-t4 {"projectId":"angular-m1-t4","projectNumber":"444842815168","displayName":"Angular-m1-t4","name":"projects/angular-m1-t4","resources":{"hostingSite":"angular-m1-t4"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_2564f7a9-f43d-49a0-abfa-95d3fb9045da"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2026-10-08T16:43:19.800Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\ruben\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:514:28)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1343:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:289:20)
+    at ReadStream.emit (node:events:526:24)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+    at ReadStream.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:567:12)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2026-10-08T16:43:29.437Z] ----------------------------------------------------------------------
+[debug] [2026-10-08T16:43:29.439Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ruben\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js use --add
+[debug] [2026-10-08T16:43:29.440Z] CLI Version:   15.30.2
+[debug] [2026-10-08T16:43:29.440Z] Platform:      win32
+[debug] [2026-10-08T16:43:29.440Z] Node Version:  v24.20.0
+[debug] [2026-10-08T16:43:29.440Z] Detected Agent: unknown
+[debug] [2026-10-08T16:43:29.440Z] Time:          Thu Oct 08 2026 13:43:29 GMT-0300 (hora estándar de Argentina)
+[debug] [2026-10-08T16:43:29.440Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-10-08T16:43:29.652Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-08T16:43:29.652Z] > authorizing via signed-in user (ruben.seco.rs@gmail.com)
+[debug] [2026-10-08T16:43:29.672Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:43:29.673Z] Checked if tokens are valid: true, expires at: 1791481062862
+[debug] [2026-10-08T16:43:29.674Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2026-10-08T16:43:30.356Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2026-10-08T16:43:30.356Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2026-10-08T16:44:02.867Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\ruben\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:514:28)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1343:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:289:20)
+    at ReadStream.emit (node:events:526:24)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+    at ReadStream.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:567:12)
+[error] 
+[error] Error: An unexpected error has occurred.
