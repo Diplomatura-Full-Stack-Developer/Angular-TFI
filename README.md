@@ -102,7 +102,7 @@ ng build
 firebase deploy
 ```
 
-8. Verificar el deploy en Firebase:
+8. Verificar el deploy en Firebase (Acceso a la aplicación):
 
 [https://angular-m1-t4.web.app/](https://angular-m1-t4.web.app/)
 
