@@ -13,7 +13,6 @@ import { ICartProduct } from '../../interfaces/product.interface';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { UserService } from '../../../users/services/user.service';
-
 @Component({
   selector: 'app-product',
   imports: [MatButtonModule, MatCardModule, CurrencyPipe, DiscountPipe, MatIconModule],
@@ -27,7 +26,7 @@ export class Product {
   error = this.productService.error;
   userService = inject(UserService);
 
-  session = computed(() => this.userService.session());
+  session = toSignal(this.userService.session$, { initialValue: undefined });
 
   isLogged = computed(() => this.session() !== undefined);
 

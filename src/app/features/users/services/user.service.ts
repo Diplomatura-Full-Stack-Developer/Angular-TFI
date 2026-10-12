@@ -1,7 +1,7 @@
 import { inject, Service, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from '../interfaces/user.interface';
-import { catchError, of } from 'rxjs';
+import { catchError, of, BehaviorSubject } from 'rxjs';
 
 @Service()
 export class UserService {
@@ -16,7 +16,17 @@ export class UserService {
 
   users = signal<IUser[]>([]);
 
-  session = signal<IUser | undefined>(undefined);
+  private readonly sessionSubject = new BehaviorSubject<IUser | undefined>(
+    this.readStoredSession(),
+  );
+  readonly session$ = this.sessionSubject.asObservable();
+  private readStoredSession(): IUser | undefined {
+    const stored = localStorage.getItem('session');
+    if (stored === null) {
+      return undefined;
+    }
+    return JSON.parse(stored) as IUser;
+  }
 
   private readonly _error = signal<string | null>(null);
   readonly error = this._error.asReadonly();
@@ -49,18 +59,19 @@ export class UserService {
   }
 
   loginUser(email: string, password: string): void {
-    this.session.set(this.users().find((user) => user.email === email && user.password === password));
-    if (this.session()) {
-      localStorage.setItem('session', JSON.stringify(this.session()));
+    const user = this.users().find(
+      (item) => item.email === email && item.password === password,
+    );
+    this.sessionSubject.next(user);
+    if (user) {
+      localStorage.setItem('session', JSON.stringify(user));
     }
   }
 
   logoutUser(): void {
-    this.session.set(undefined);
+    this.sessionSubject.next(undefined);
     localStorage.removeItem('session');
-  }
-
-  deleteUser(id: string): void {
+  } deleteUser(id: string): void {
     this.users.update((users) => users.filter((user) => user.id !== id));
     this.persist();
   }

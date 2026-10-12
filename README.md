@@ -101,6 +101,10 @@ ng build
 firebase deploy
 ```
 
+8. Verificar el deploy en Firebase:
+
+[https://angular-m1-t4.web.app/](https://angular-m1-t4.web.app/)
+
 ### Pasos para la ejecución local:
 
 1. Clonar el repositorio:

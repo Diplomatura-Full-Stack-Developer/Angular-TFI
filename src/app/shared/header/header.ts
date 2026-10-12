@@ -5,7 +5,9 @@ import { computed } from '@angular/core';
 import { ProductService } from '../../features/products/services/product.service';
 import { Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { ICartProduct } from '../../features/products/interfaces/product.interface';
+import { toSignal } from '@angular/core/rxjs-interop';
+
+
 @Component({
   selector: 'app-header',
   imports: [Navbar, MatIcon],
@@ -19,8 +21,7 @@ export class Header {
 
   totalCartQuantity = computed(() => this.productService.totalQuantityInCart());
 
-  session = computed(() => this.userService.session());
-
+  session = toSignal(this.userService.session$, { initialValue: undefined });
   setTitle = computed(() => this.session()?.name ? `Hola, ${this.session()?.name}` : 'Angular');
 
   openCart = () => {

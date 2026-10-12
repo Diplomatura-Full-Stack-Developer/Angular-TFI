@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { UserService } from '../../features/users/services/user.service';
 import { inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-footer',
   imports: [MatIconModule, RouterLink],
@@ -12,7 +13,7 @@ export class Footer {
 
   private userService = inject(UserService);
 
-  session = computed(() => this.userService.session());
+  session = toSignal(this.userService.session$, { initialValue: undefined });
 
   menuItems = computed<{ label: string; routerLink?: string; action?: () => void }[]>(() => [
     {

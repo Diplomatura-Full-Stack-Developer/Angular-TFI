@@ -2,6 +2,9 @@ import { inject, Service, signal } from '@angular/core';
 import { ICartProduct, IProduct } from '../interfaces/product.interface';
 import { HttpClient } from '@angular/common/http';
 import { catchError, of } from 'rxjs';
+
+
+
 @Service()
 export class ProductService {
 
